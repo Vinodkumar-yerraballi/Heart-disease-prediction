@@ -1,19 +1,13 @@
-from pyexpat import model
-from unittest import result
-from pyrsistent import v
 import streamlit as st
 import pandas as pd
 import numpy as np
+
 import pickle
-import streamlit.components.v1 as stc
 from PIL import Image
 
-model=pickle.load(open('heart_disease_prediction.sav','rb'))
-
-image=Image.open('heart attack.jpeg')
 
 
-
+model=pickle.load(open('heart_disease_predictions.sav','rb'))
 
 def input_features(BMI, Smoking, AlcoholDrinking, Stroke,
        PhysicalHealth, MentalHealth, DiffWalking, Sex, AgeCategory,
@@ -29,8 +23,9 @@ def input_features(BMI, Smoking, AlcoholDrinking, Stroke,
         print("The person have heart disease")
     print(prediction)
     return prediction
-   
 
+
+image=Image.open('heart attack.jpeg')
 
 
 def main():
@@ -55,8 +50,8 @@ def main():
     MentalHealth=st.slider("Enter MentalHealth",0.0,30.0,0.1)
     DiffWalking=st.selectbox("your DiffWalking status yes=1,or no=0",["1","0"])
     Sex=st.selectbox("(1=Male,0=Female)",["1","0"])
-    AgeCategory=st.text_input("Enter your age",18,85,1)
-    Race=st.selectbox("(White=5, Black=4, Asian'=3, American Indian/Alaskan Native=2,Other=1, Hispanic=0)",["5","4","3","2","1","0"])
+    AgeCategory=st.selectbox("(55-59,80 or older, 65-69, 75-79, 40-44,70-74,60-64, 50-54, 45-49, 18-24, 35-39,30-34,25-29)",[ "7", "12", "9", "11",  "4", "10",  "8",  "6",  "5",  "0",  "3",  "2", "1"])
+    Race=st.selectbox("(White=5, Black=4, Asian=3, American Indian/Alaskan Native=2,Other=1, Hispanic=0)",["5","4","3","2","1","0"])
     Diabetic=st.selectbox("your Diabetic status yes=1,or no=0",["1","0"])
     PhysicalActivity=st.selectbox("your PhysicalActivity status yes=1,or no=0",["1","0"])
     GenHealth=st.selectbox("(Very good=4, Fair=3, Good=2, Poor=1, Excellent=0)",["4","3","2","1","0"])
@@ -83,4 +78,6 @@ def main():
 
 if __name__=='__main__':
     main()
+
+
 
