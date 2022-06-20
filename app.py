@@ -30,7 +30,7 @@ def input_features(BMI, Smoking, AlcoholDrinking, Stroke,
         print("The person have heart disease")
     print(prediction)
     return prediction
-
+   
 
 
 
@@ -48,12 +48,12 @@ def main():
     st.image(image,caption='Check you have heart disease')
 
 
-    BMI=st.text_input("Enter your body mass index",12,95,1)
-    Smoking=st.selectbox("(1=Yes,0=No)",["1","0"])
+    BMI=st.slider("Enter body mass index",12.02,94.85)
+    Smoking=st.selectbox("your Smoking status yes=1,or no=0",["1","0"])
     AlcoholDrinking=st.selectbox("your alcoholdrinking status yes=1,or no=0",["1","0"])
     Stroke=st.selectbox("your Stroke status yes=1,or no=0",["1","0"])
-    PhysicalHealth=st.text_input("Enter PhysicalHealth",0,30,1)
-    MentalHealth=st.text_input("Enter MentalHealth",0,30,1)
+    PhysicalHealth=st.slider("Enter PhysicalHealth",0.0,30.0,0.1)
+    MentalHealth=st.slider("Enter MentalHealth",0.0,30.0,0.1)
     DiffWalking=st.selectbox("your DiffWalking status yes=1,or no=0",["1","0"])
     Sex=st.selectbox("(1=Male,0=Female)",["1","0"])
     AgeCategory=st.text_input("Enter your age",18,85,1)
@@ -61,7 +61,7 @@ def main():
     Diabetic=st.selectbox("your Diabetic status yes=1,or no=0",["1","0"])
     PhysicalActivity=st.selectbox("your PhysicalActivity status yes=1,or no=0",["1","0"])
     GenHealth=st.selectbox("(Very good=4, Fair=3, Good=2, Poor=1, Excellent=0)",["4","3","2","1","0"])
-    SleepTime=st.text_input("Enter your sleeptime",1,24,1)
+    SleepTime=st.slider("Enter your sleeptime",1.0,24.0,1.0)
     Asthma=st.selectbox("your Asthma status yes=1,or no=0",["1","0"])
     KidneyDisease=st.selectbox("your KidneyDiseas status yes=1,or no=0",["1","0"])
     SkinCancer=st.selectbox("your SkinCancer status yes=1,or no=0",["1","0"])
@@ -74,10 +74,10 @@ def main():
        Race, Diabetic, PhysicalActivity, GenHealth, SleepTime,
        Asthma, KidneyDisease, SkinCancer)
     
-        if (result[0]==1):
-            st.success("The person have heart disease,Please consult doctor")
+        if (result[0]==0):
+            st.warning("The preson don't have heart disease")
         else:
-            st.warning("The person have heart disease")
+            st.success("The preson have heart disease")
     
 
 
