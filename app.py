@@ -4,7 +4,6 @@ from pyrsistent import v
 import streamlit as st
 import pandas as pd
 import numpy as np
-from yaml import load
 import pickle
 from PIL import Image
 
