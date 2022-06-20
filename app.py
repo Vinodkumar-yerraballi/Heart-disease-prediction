@@ -1,6 +1,5 @@
 from pyexpat import model
 from unittest import result
-from matplotlib import image
 from pyrsistent import v
 import streamlit as st
 import pandas as pd
