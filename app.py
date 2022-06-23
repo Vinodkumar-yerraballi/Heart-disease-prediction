@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-import pickle
+from warnings import simplefilter
+
+simplefilter(action='ignore', category=FutureWarning)
 from PIL import Image
 from sklearn.preprocessing import LabelEncoder
 from sklearn.linear_model import LogisticRegression
