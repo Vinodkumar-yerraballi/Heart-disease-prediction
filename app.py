@@ -32,7 +32,7 @@ data['Diabetic']=le.fit_transform(data['Diabetic'])
 data['GenHealth']=le.fit_transform(data['GenHealth'])
 
 
-X=data.drop(['HeartDisease'],axis=1)
+X=data.drop(['HeartDisease'],axis=1).values
 y=data['HeartDisease']
 
 model=LogisticRegression(random_state=0)
