@@ -67,7 +67,7 @@ def main():
     PhysicalHealth=st.slider("Enter PhysicalHealth",0.0,30.0,0.1)
     MentalHealth=st.slider("Enter MentalHealth",0.0,30.0,0.1)
     DiffWalking=st.selectbox("your DiffWalking status yes=1,or no=0",[1,0])
-    Sex=st.selectbox("(1=Male,0=Female)",["1","0"])
+    Sex=st.selectbox("(1=Male,0=Female)",[1,0])
     AgeCategory=st.selectbox("(55-59,80 or older, 65-69, 75-79, 40-44,70-74,60-64, 50-54, 45-49, 18-24, 35-39,30-34,25-29)",[ 7, 12, 9, 11, 4, 10,8,6,5,0,3,2,1])
     Race=st.selectbox("(White=5, Black=4, Asian=3, American Indian/Alaskan Native=2,Other=1, Hispanic=0)",[5,4,3,2,1,0])
     Diabetic=st.selectbox("your Diabetic status yes=1,or no=0",[1,0])
