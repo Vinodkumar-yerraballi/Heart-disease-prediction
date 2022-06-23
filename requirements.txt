@@ -1,9 +1,0 @@
-matplotlib==3.5.1
-seaborn==0.11.2
-numpy==1.21.5
-streamlit==0.76.0
-pandas==1.4.2
-joblib==1.1.0
-scikit-learn==1.1.1
-imageio==2.9.0
-sympy==1.10.1
